@@ -39,6 +39,7 @@ Return-delimited seems to be the most common method, but repeating variables is 
 
 1. Empty values can cause rows to be miss-alligned.
 2. Variables are immutable, so appending data to a variable get's slower as the data get's larger. In other words: it can be slow with large lists when creating the list via looping through records.
+3. Value cannot contain a return (this issue can be bypassed by substituting/encoding returns, both of which have their own issues).
 
 ### Pros of Repeating:
 

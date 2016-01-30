@@ -70,7 +70,7 @@ I typically create multiple, generic fields in the VirtualList table like so:
 - id2
 - text1
 - text2
-- date
+- date1
 - etc.
 
 TODO:  how many fields is too many?
@@ -83,7 +83,7 @@ TODO
 
 ## VirtualList::index field vs Get( RecordNumber )
 
-I've never actually used Get( RecordNumber ) instead of an index field, so I'm not sure if or how this works. I thought I saw someone else using this once, though.
+I've never actually used `Get( RecordNumber )` instead of an index field. [VIRTUAL VALUE LIST](http://www.modularfilemaker.org/module/virtual-value-list/) uses it, though.
 
 TODO
 

@@ -76,6 +76,41 @@ I typically create multiple, generic fields in the VirtualList table like so:
 
 TODO:  how many fields is too many?
 
+## Method for extracting array values to repeating field
+
+When the result is just required for display purposes, I use a virtual array where values in each row are separated by the pipe character. This formula auto-extracts each value into repetitions of a field. If you need more values to display then just add another repetition.
+
+```
+// vListWhole is field storing individual repetition with sub-values separated by "|"
+
+If ( 
+	Let ( [ 
+		_count = PatternCount ( Extend ( vListWhole ) ; "|" ) ;
+		_rep = Get ( CalculationRepetitionNumber ) ;
+		_start = Max( 0 ; Position ( Extend ( vListWhole ) ; "|" ; 1 ; _rep - 1 ) ) +1 ;
+		_end = Position ( Extend ( vListWhole ) & "|" ; "|" ; 1 ; _rep ) ; 
+		$extract = Middle ( Extend ( vListWhole ) & "|" ; _start ; _end - _start )
+	] ;
+	
+	_count > 0 
+	
+	) //end let
+	
+;
+	$extract
+	
+; //else
+
+	If ( Get ( CalculationRepetitionNumber ) = 1 ;
+		vListWhole 
+
+	; //else
+		"" 
+	) //end if
+	
+) //end if
+```
+
 
 ## Primary Key vs Get( RecordID )
 

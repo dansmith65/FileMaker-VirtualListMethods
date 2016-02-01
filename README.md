@@ -63,6 +63,13 @@ If collecting id's, need a relationship between the virtual list table and the r
 TODO: debate pros vs cons
 
 
+## Single variable or Multiple?
+
+I typically use a separate variable for each field in the VirtualList table. Another option is to encode all data in a single variable.
+
+TODO: debate pros vs cons
+
+
 ## Multiple VirtualList Fields
 
 I typically create multiple, generic fields in the VirtualList table like so:

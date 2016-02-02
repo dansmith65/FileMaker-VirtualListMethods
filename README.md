@@ -126,9 +126,7 @@ TODO
 
 ## VirtualList::index field vs Get( RecordNumber )
 
-I've never actually used `Get( RecordNumber )` instead of an index field. [VIRTUAL VALUE LIST](http://www.modularfilemaker.org/module/virtual-value-list/) uses it, though.
-
-TODO
+Since the index field is required to display a specific number of records in a portal, I recommend using the index field for all general-purpose VirtualList tables. If creating a single-purpose VirtualList table like [Virtual Value List](http://www.modularfilemaker.org/module/virtual-value-list/), it may be fine to use `Get( RecordNumber )` instead of an index field, so you don't have to manage a unique/serial value for all records.
 
 ## Notes
 
